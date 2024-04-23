@@ -1,0 +1,17 @@
+.logo {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.font1 {
+  font-size: 0.75rem;
+}
+
+.slide {
+  width: 100% !important;
+  height: 375px;
+}
+
+.sidebar-menu > li:hover {
+  background-color: blanchedalmond;
+}
