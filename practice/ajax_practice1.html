@@ -4,23 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    <style>
+        .div{
+            background-color: yellow;
+            width: 130px;
+            height: 140px;
+        }
+    </style>
 </head>
 <body>
 
     <div class="dd" id="d1">
-        <p>hello</p>
+        <p id="p1">hello</p>
+        <p id="p2">paragraph 2</p>
+        <p id="p3">paragraph 3</p>
+        <p id="p4"></p>
     </div>
 
-    <script>
-        var a = document.getElementById("d1").innerText;
-        document.write(a);
-        console.log(a);
-    </script>
+
+        <div id="test1" class="div">
+            <h4>test box 1</h4>
+            <p>something written in paragraph and this is the paragraph of div with id test1</p>
+        </div>
+        <div id="test2" class="div" style="color: rgb(180, 34, 34);">
+            <h4>test box 2</h4>
+            <p>something written in paragraph and this is the paragraph of div with id test2</p>
+        </div>
+    
+
+<pre>
+    hello 
+        o mahi re 
+</pre>
     
     <script>
+        // $(document).ready(function(){
+        //     $("#p1").css("color","red");
+        //     alert('welcome to jquery')    
+        //     var a = $("#p2").html();
+        //     console.log(a); 
+        // })
+
+        // $(function(){
+        //     var c =$("#p3").html();
+        //     document.write(c);
+        // })
         $(document).ready(function(){
-            
+            var a =$('#test1').html;
+            console.log(a);
+            document.write(a);
+            document.write("===============================/n"  );
+            var b = $("test2")
+            console.log(b);
+            document.write(b);
         })
     </script>
+    
+    <!-- `
+        Lightweight JavaScript Library 
+
+        Long Selector ==> Function()
+        Complex Animation 
+        Length DOM Manipulation 
+     ** L_e_n_g_h_t_y Ajax Coding 
+    
+
+    Write less Do more 
+
+
+    Short Selector 
+    Variety of Animation Functions
+    Easy DOM Manipulation
+    Easy CSS Styling 
+    Easy DOM Traversing
+
+
+
+    in js 
+
+
+    document.getElementByClassName('class_name')
+    $('.class_name')
+
+
+    document.getElementByIdName('id_name')
+    $('#id_name')
+
+
+    $('tagname')
+
+
+
+    Beni_fit
+
+    1.Browser Independent
+    2.Increase Coding Speed
+
+
+
+    Basic Syntax :
+
+    $(document).        ready();
+//   selector           method()
+//target DOM element   what work
+    fully expand when we use the Jquery 
+    * use  function
+
+    $(document).ready(function(){
+        // your code 
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    -->
+
 </body>
 </html>
