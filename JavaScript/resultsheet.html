@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 1px;
+            box-sizing: border-box;
+        }
+        .container{
+            margin: 2em;
+            border: 1px solid red;
+            height: 120vh;
+            font-size: 1.5rem;
+            color: rgb(255, 0, 0);
+        } 
+
+        .result-form{
+            margin: auto;
+            display: flex;
+            border: solid 1px green;
+            width: 40%;
+            margin-top: 3em;
+
+            table{
+                background-color: rgb(58, 102, 153);
+                width: 100%;
+            }
+            input{
+                width: 100%;
+                height: 2em;
+                border-radius: 5px;
+                border-width: 0.5px;
+                color: black;
+                font-size: 15px;
+            }
+            input:hover{
+                background-color: azure;
+            }
+            td{
+                text-align: right;
+            }
+
+        }
+        h1{
+            text-align: center;
+        }
+
+        button{
+            width: 40%;
+            height: 2.5em;
+            background-color: blanchedalmond;
+        }
+        button:hover{
+            background-color: burlywood;
+            color: rgb(142, 37, 37);
+        }
+        .result-sheet{
+            border: 1px solid black;
+
+            height: 50vh;
+            background-color: aquamarine;
+            
+            width: 50%;
+            margin: auto;
+            margin-top : 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>STUDENT FORM</h1>
+            <hr/>
+        <div class="result-form">
+            
+            <!-- <form action=""> -->
+                <table cellspacing="10px">
+                    <tr >
+                        <td>
+                            <label for="name">Name</label>
+                        </td>
+                        <td>
+                            <input type="text" id="name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="rollNo">RollNo :</label>
+                        </td>
+                        <td>
+                            <input type="num" id="rollNo" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="phy">Physics :</label>
+                        </td>
+                        <td>
+                            <input type="num" id="phy" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="che">Chemistry :</label>
+                        </td>
+                        <td>
+                            <input type="num" id="che" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="math">Mathematics :</label>
+                        </td>
+                        <td>
+                            <input type="num" id="math" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="bio">Biology :</label>
+                        </td>
+                        <td>
+                            <input type="num" id="bio" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <button onclick="result()">Submit</button>
+                            <button>Clear</button>
+                        </td>
+                    </tr>
+                </table>
+            <!-- </form> -->
+        </div>
+    
+        <div class="result-sheet" style="text-align: center;">
+            <h2 style="color: rgb(255, 111, 0);">Result Sheet</h1>
+            <hr>
+            <div>
+                <table>
+                    <tr>
+                        <td>NAME </td>
+                        <td>
+                            <label id="lblName"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Roll No </td>
+                        <td>
+                            <label id="lblRoll"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PHYSICS </td>
+                        <td>
+                            <label id="lblPhy"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CHEMISTRY </td>
+                        <td>
+                            <label id="lblChem"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>MATHEMATICS </td>
+                        <td>
+                            <label id="lblMath"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BIOLOGY </td>
+                        <td>
+                            <label id="lblBio"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TOTAL </td>
+                        <td>
+                            <label id="lblTotal"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>AVERAGE </td>
+                        <td>
+                            <label id="lblAvg"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PERCENTAGE </td>
+                        <td>
+                            <label id="lblPercentage"></label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+        function result(){
+            alert("JS is Ready");
+            var name = document.getElementById('name').value;
+            var roll = document.getElementById('rollNo').value;
+            var phy =parseFloat(document.getElementById('phy').value);  
+            var che =parseFloat(document.getElementById('che').value);
+            var math =parseFloat(document.getElementById('math').value);
+            var bio =parseFloat(document.getElementById('bio').value);
+            
+            var Total = phy+che+math+bio;
+
+            var Average = Total/4;
+
+            var percentage = Total/400*100;
+
+            document.getElementById('lblName').innerHTML=name;
+            document.getElementById('lblRoll').innerHTML=roll;
+            document.getElementById('lblPhy').innerHTML=phy;
+            document.getElementById('lblChem').innerHTML=che;
+            document.getElementById('lblMath').innerHTML=math;
+            document.getElementById('lblBio').innerHTML=bio;
+            document.getElementById('lblTotal').innerHTML=Total;
+            document.getElementById('lblAvg').innerHTML=Average;
+            document.getElementById('lblPercentage').innerHTML=percentage+'%';
+            
+        }
+    </script>
+</body>
+</html>
