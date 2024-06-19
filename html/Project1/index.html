@@ -1,0 +1,77 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Project1/css/style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1 class="heading">Employee Management System</h1>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" class="form-control" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" class="form-control" placeholder="Enter Phone No" required>
+            </div>
+            <div class="form-group">
+                <label for="job">Job</label>
+                <input type="text" id="job" class="form-control" placeholder="Enter Your Job" required>
+            </div>
+            <div class="form-group">
+                <button class="btn" onclick="add()">Add Employee</button>
+                <button class="btn">Update Employee</button>
+            </div>
+            
+        </div>
+        <!-- ..................................................................................................................................... -->
+        <div class="table-container">
+
+            <table border="1">
+                <tr>
+                    <th>SlNo</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Job</th>
+                    <th>Action</th>
+                </tr>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Lucky</td>
+                    <td>lucky@gmail.com</td>
+                    <td>9078715715</td>
+                    <td>Software Developer</td>
+                    <td>
+                        <button onclick="Add()">Add</button>
+                        <button>Delete</button>
+                    </td>
+                </tr> -->
+                <tbody id="tabledata">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../Project1/js/script.js"></script>
+</body>
+</html>
+
+
+
+
