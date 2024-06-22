@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>email</title>
+</head>
+<body>
+    <input type="email" id="email" >
+    <button onclick="validate()">click</button>
+
+    <script>
+        function validate(){
+            var email = document.getElementById("email");
+
+            alert(email);
+            var res = IsvalidEmail(email);
+            if(res){
+                alert("valid Email");
+            }
+            else{
+                alert("in valid Email");
+            }
+
+            function IsvalidEmail(email){
+                
+            }
+            /*
+                ----@--------.---
+            */
+        }
+    </script>
+</body>
+</html>
