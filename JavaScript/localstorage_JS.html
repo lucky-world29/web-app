@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h4>LOcal Storage</h4>
+        <label for="name">Name</label>
+        <input type="text" id="name">
+
+        <button onclick="LS()">Add </button>
+    </div>
+    <script>
+        //let key =prompt("Enter key u want to set");
+        //let value =prompt("Enter value u want to set");
+
+//        localStorage.getItem(Key,value);
+  //      
+    //    console.log(`The value at ${key} is ${localStorage.getItem(key)}`);
+
+      //  if(key == "red"){
+        //    localStorage.removeItem(key);
+      //  } 
+
+
+    
+
+    
+    function LS(){
+        //alert("inside the LS");
+        let flag = true;
+        if(name==""){
+            alert("Enter a name");
+            document.getElementById("name").focus();
+            flag = false;
+        }
+        save();
+    }
+
+    function save(){
+
+        let name = document.getElementById("name").value;
+
+        if(LS(name)){
+            alert("validate ok");
+
+            let Employee{
+                Name : name'
+            
+                };
+        }
+    }
+        
+    </script>
+</body>
+</html>
