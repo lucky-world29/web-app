@@ -24,10 +24,22 @@
             <button class="btn btn-primary btn-lg" id="btnAdd" onclick="add()">Add</button>
         </div> 
     </div>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Name </th>
+                <th>Email </th>
+            </tr>
+            <tbody id="tabledata">
+                
+            </tbody>
+        </table>
+    </div>
     
     <script>
         //============
-       
+        let arrEmployees = [];
 //=======================
     function validate(name, email) {
         // Simple validation
@@ -57,25 +69,42 @@
             Email : email,
         };
 
-        localStorage.setItem("Name",name);
-        localStorage.setItem("Email",email);
+        //localStorage.setItem("Name",name);
+        //localStorage.setItem("Email",email);
 
         //BindTable();
         
         
-        /*arrEmployees=JSON.parse(localStorage.getItem(employee));
+        arrEmployees=JSON.parse(localStorage.getItem(employee));
         arrEmployees=arrEmployees=null?[]:arrEmployees;
         arrEmployees.push(employee);
 
-        localStorage.setItem("Employees",JSON.stringify(arrEmployees));*/
+        localStorage.setItem("Employees",JSON.stringify(arrEmployees));
     }
 //============================
     function BindTable(){
-    //    let employees=JSON.parse(localStorage.getItem(employees));
-    //    let data ="";
-    let name = localStorage.getItem("Name");
-    let email = localStorage.getItem("Email");
+    
+    //let name = localStorage.getItem("Name");
+    //let email = localStorage.getItem("Email");
+
+    let employees = JSON.parse(localStorage.getItem("employees"));
         //alert("Name is "=name+" "+"Email is "+email);
+
+        let data="";
+
+        if(employees != null && employees.length >0){
+            for(let i = 0;i<employees.length;i++){
+                data += "<tr>";
+                data += `<td>${employees[i].Name}</td>`;
+                data +=`<td>${employees[i].Email}</td>`;
+                data += "</tr>";
+            }
+        }
+        else{
+            data += "<p>No record found</p>";
+        }
+
+        document.getElementById("tabledata").innerHTML=data;
 
     }
     </script>
