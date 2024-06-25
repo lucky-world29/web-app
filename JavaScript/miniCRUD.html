@@ -22,91 +22,90 @@
         <br>
         <div class="mb-3 container p-2 mt-2">
             <button class="btn btn-primary btn-lg" id="btnAdd" onclick="add()">Add</button>
-        </div> 
+        </div>
     </div>
 
-    <div class="table-container">
-        <table>
+    <div class="table-container container mt-5">
+        <table class="table table-success">
             <tr>
                 <th>Name </th>
                 <th>Email </th>
+                <th>Action</th>
             </tr>
             <tbody id="tabledata">
-                
+
+
             </tbody>
         </table>
     </div>
-    
-    <script>
-        //============
-        let arrEmployees = [];
-//=======================
-    function validate(name, email) {
-        // Simple validation
-        if (name === "") {
-            alert("Name is required.");
-            document.getElementById("txtnm").focus();
-            return false;
-        }
-        else if(email === ""){
-            alert("Email is required");
-            document.getElementById("txtem").focus();
-            return false;
-        }
-        return true;
-    }
-//==========================
-    function add() {
-        let name = document.getElementById("txtnm").value;
-        let email = document.getElementById("txtem").value;
 
-        if (validate(name, email)) {
-            alert("Validation Ok");
-        }
+    <script>//========================================================================================================================
 
-        let employee={
-            Name : name,
-            Email : email,
-        };
-
-        //localStorage.setItem("Name",name);
-        //localStorage.setItem("Email",email);
-
-        //BindTable();
-        
-        
-        arrEmployees=JSON.parse(localStorage.getItem(employee));
-        arrEmployees=arrEmployees=null?[]:arrEmployees;
-        arrEmployees.push(employee);
-
-        localStorage.setItem("Employees",JSON.stringify(arrEmployees));
-    }
-//============================
-    function BindTable(){
-    
-    //let name = localStorage.getItem("Name");
-    //let email = localStorage.getItem("Email");
-
-    let employees = JSON.parse(localStorage.getItem("employees"));
-        //alert("Name is "=name+" "+"Email is "+email);
-
-        let data="";
-
-        if(employees != null && employees.length >0){
-            for(let i = 0;i<employees.length;i++){
-                data += "<tr>";
-                data += `<td>${employees[i].Name}</td>`;
-                data +=`<td>${employees[i].Email}</td>`;
-                data += "</tr>";
+        let ArrayEmployees = [];
+        //=======================
+        function validate(name, email) {
+            // Simple validation
+            if (name === "") {
+                alert("Name is required.");
+                document.getElementById("txtnm").focus();
+                return false;
             }
+            else if (email === "") {
+                alert("Email is required");
+                document.getElementById("txtem").focus();
+                return false;
+            }
+            return true;
         }
-        else{
-            data += "<p>No record found</p>";
+        //==========================
+        function add() {
+            let name = document.getElementById("txtnm").value;
+            let email = document.getElementById("txtem").value;
+
+            if (validate(name, email)) {
+                alert("Validation Ok");
+            }
+
+            let employee = {
+                Name: name, //Property : value,
+                Email: email,
+            };
+
+            //localStorage.setItem("Name", name);
+            //localStorage.setItem("Email", email);
+            //localStorage.setItem("employee1",JSON.stringify(employee));
+
+            ArrayEmployees = JSON.parse(localStorage.getItem("Employees"));
+            ArrayEmployees.push(employee);
+            localStorage.setItem("Employees",JSON.stringify(ArrayEmployees));
+            
+            BindTable();
+
+            
         }
+        //============================
+        function BindTable() {
 
-        document.getElementById("tabledata").innerHTML=data;
+            //let name = localStorage.getItem("Name");
+            //let email = localStorage.getItem("Email");
+            let Employees = JSON.parse(localStorage.getItem("Employees"));
+            let data ='';
+            for(let i = 0;i<Employees.length;i++){
+                    data += '<tr>';
+                    data += `<td>${Employees[i].Name}</td>`;
+                    data += `<td>${Employees[i].Email}</td>`;
+                    data += '<td><button class="btn btn-primary btn-group-sm">Edit</button><button class="btn btn-danger btn-group-sm">Delete</button></td>';
+                    data += '</tr>';
+            }
+            //alert(name);
+            //alert(email);
 
-    }
+            //let employees = JSON.parse(localStorage.getItem("employees"));
+            //alert("Name is "=name+" "+"Email is "+email);
+
+        
+            document.getElementById("tabledata").innerHTML = data;
+        }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
