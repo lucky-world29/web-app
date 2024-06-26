@@ -9,7 +9,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="BindTable()">
     <div class="container p-5 bg-secondary text-white mt-2">
         <div class="mb-3 ">
             <label for="name" class="form-label">Name</label>
@@ -28,6 +28,7 @@
     <div class="table-container container mt-5">
         <table class="table table-success">
             <tr>
+                <th>SLNO</th>
                 <th>Name </th>
                 <th>Email </th>
                 <th>Action</th>
@@ -62,9 +63,9 @@
             let name = document.getElementById("txtnm").value;
             let email = document.getElementById("txtem").value;
 
-            if (validate(name, email)) {
+            /*if (validate(name, email)) {
                 alert("Validation Ok");
-            }
+            }*/
 
             let employee = {
                 Name: name, //Property : value,
@@ -76,6 +77,7 @@
             //localStorage.setItem("employee1",JSON.stringify(employee));
 
             ArrayEmployees = JSON.parse(localStorage.getItem("Employees"));
+            ArrayEmployees = ArrayEmployees == null ? [] : ArrayEmployees; // use of ternary operator 
             ArrayEmployees.push(employee);
             localStorage.setItem("Employees",JSON.stringify(ArrayEmployees));
             
@@ -90,13 +92,20 @@
             //let email = localStorage.getItem("Email");
             let Employees = JSON.parse(localStorage.getItem("Employees"));
             let data ='';
-            for(let i = 0;i<Employees.length;i++){
+            if(Employees != null &&  Employees.length > 0){
+                for(let i = 0;i<Employees.length;i++){
                     data += '<tr>';
+                    data += `<td>${i+1}</td>`;
                     data += `<td>${Employees[i].Name}</td>`;
                     data += `<td>${Employees[i].Email}</td>`;
-                    data += '<td><button class="btn btn-primary btn-group-sm">Edit</button><button class="btn btn-danger btn-group-sm">Delete</button></td>';
+                    data += `<td><button class="btn btn-primary btn-group-sm" onclick="edit(${i})">Edit</button>
+                                <button class="btn btn-danger btn-group-sm" onclick="del(${i})">Delete</button></td>`;
                     data += '</tr>';
             }
+            }else{
+                data+= "<tr><td colspan='3' style='text-align:center'>No Records Found</td></tr>";
+            }
+            
             //alert(name);
             //alert(email);
 
@@ -106,6 +115,14 @@
         
             document.getElementById("tabledata").innerHTML = data;
         }
+
+        function edit(index){
+            alert(index);
+        }
+        function del(index){
+            alert(index);
+        }
+        //========================================================================================================================
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
