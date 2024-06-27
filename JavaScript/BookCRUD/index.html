@@ -22,34 +22,32 @@
 
 <body style="background-color: bisque;">
     
-    <div class="container p-3 my-5 bg-dark text-white">
-        <div class="row gx-5">
-            <div class="col-9">
-                <form action="">
+    <div class="container p-5 mt-5 bg-secondary text-white" style="width: 50%;">
+        
+                <form action="" >
                     <div class="mb-3">
-                        <label for="Bname" class="form-label text-danger">Book Name</label>
+                        <label for="Bname" class="form-label text-dark col-form-label-lg"><b>Book Name</b></label>
                         <input type="text" class="form-control" name="BookName" id="bname" required>
                     </div>
                     <div class="mb-3">
-                        <label for="bauthor" class="form-label text-danger">Book Author</label>
+                        <label for="bauthor" class="form-label text-dark col-form-label-lg"><b>Book Author</b></label>
                         <input type="text" class="form-control" name="BookAuthor" id="bauthor" required>
                     </div>
-                    <!-- <div class="mb-3">
-                        <label for="bprice" class="form-label text-danger">Book Price</label>
+                    <div class="mb-3">
+                        <label for="bprice" class="form-label text-dark col-form-label-lg"><b>Book Price</b></label>
                         <input type="number" class="form-control" name="BookPrice" id="bprice" required>
                     </div>
                     
                     <div class="mb-3">
-                        <label for="img" class="form-label text-danger">Book Image</label>
-                        <input class="form-control" type="file" id="bimage" required>
-                    </div> -->
+                        <label for="img" class="form-label text-dark col-form-label-lg"><b>Book Image</b></label>
+                        <input class="form-control" type="text" id="bimage" required>
+                    </div>
                     <div class="col-6">
                         
-                        <a href="./view.html"><button class="btn btn-primary" type="submit" onclick="click()">Submit form</button>  </a>
+                        <a href="./view.html"><button class="btn btn-primary" type="submit" onclick="addBook()"><h3>Submit</h3></button>  </a>
                     </div>
                 </form>
-            </div>
-        </div>
+            
     </div>
     
 

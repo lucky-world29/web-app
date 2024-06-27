@@ -1,5 +1,6 @@
-let arrBook =  [];
-function click(){
+let ArrBook = [];
+
+function addBook() {
     alert("hi");
 
     let BName = document.getElementById("bname").value;
@@ -8,26 +9,34 @@ function click(){
     let BImage = document.getElementById("bimage").value;
 
     let book = {
-        BookName: BName,
+        BookName: BName, // property and it's value
         BookAuthor: BAuthor,
         BookPrice: BPrice,
         BookImage: BImage,
     };
 
-        localStorage.setItem("BookName",BName);
-        localStorage.setItem("BookAuthor",BAuthor);
+    localStorage.setItem("BookName", BName);
+    localStorage.setItem("BookAuthor", BAuthor);
+    localStorage.setItem("BookPrice", BPrice);
+    localStorage.setItem("BookImage", BImage);
 
-        arrBook = JSON.parse(localStorage.getItem("books"));
+    ArrBook = JSON.parse(localStorage.getItem("books"));
+    ArrBook = ArrBook == null ? [] : ArrBook;
+    ArrBook.push(book);
+    localStorage.setItem("books", JSON.stringify(ArrBook));
+
+    /*arrBook = JSON.parse(localStorage.getItem("books"));
         arrEmployees = arrEmployees == null ? [] : arrEmployees;
         arrEmployees.push(employee);
         localStorage.setItem("employees", JSON.stringify(arrEmployees));
+  */
+    window.location.replace("view.html");
 
-        
-        BindTable();
+    // BindTable();
 }
 
 function BindTable() {
-    let books = JSON.parse(localStorage.getItem("books"));
+    let books = JSON.parse(localStorage.getItem(" books "));
     let data = "";
     if (books != null && books.length > 0) {
         for (let i = 0; i < books.length; i++) {
@@ -63,5 +72,3 @@ function editEmloyee(index) {
     document.getElementById("btnAdd").setAttribute("style", "display:none");
     document.getElementById("btnUpdate").setAttribute("style", "display:block");
 }
-
-
