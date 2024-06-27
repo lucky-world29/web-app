@@ -118,6 +118,12 @@
 
         function edit(index){
             alert(index);
+            let Employees = JSON.parse(localStorage.getItem("Employees"));
+            let employee = Employees[index];
+            console.log(Employees);
+            console.log(employee);
+            document.getElementById("txtnm").value = employee.Name;
+            document.getElementById("txtem").value = employee.Email;
         }
         function del(index){
             alert(index);
