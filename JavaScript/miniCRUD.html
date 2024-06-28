@@ -21,7 +21,8 @@
         </div>
         <br>
         <div class="mb-3 container p-2 mt-2">
-            <button class="btn btn-primary btn-lg" id="btnAdd" onclick="add()">Add</button>
+                    <button class="btn btn-primary btn-lg" id="btnAdd" onclick="add()">Add</button>
+                    <button class="btn btn-primary btn-lg" id="btnUpdate" onclick="update()">Update</button>
         </div>
     </div>
 
@@ -82,6 +83,7 @@
             localStorage.setItem("Employees",JSON.stringify(ArrayEmployees));
             
             BindTable();
+            location.reload();  // reload the page
 
             
         }
@@ -119,11 +121,20 @@
         function edit(index){
             alert(index);
             let Employees = JSON.parse(localStorage.getItem("Employees"));
-            let employee = Employees[index];
+            let employee = Employees[index+1];
             console.log(Employees);
             console.log(employee);
             document.getElementById("txtnm").value = employee.Name;
             document.getElementById("txtem").value = employee.Email;
+            document.getElementById("btnAdd").style.display = "none";
+            document.getElementById("btnUpdate").style.display = "block";
+            
+        }
+        function update(){
+            alert("Update");
+            let name = document.getElementById("txtnm").value;
+            let email = document.getElementById("txtem").value;
+            let Employees = JSON.parse(localStorage.getItem("Employees"));
         }
         function del(index){
             alert(index);
