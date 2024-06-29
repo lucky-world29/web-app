@@ -12,6 +12,10 @@
 <body onload="BindTable()">
     <div class="container p-5 bg-secondary text-white mt-2">
         <div class="mb-3 ">
+            <!-- <label for="name" class="form-label">Name</label> -->
+            <input type="hidden"  id="hdnIndex" value="-1">
+        </div>
+        <div class="mb-3 ">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="txtnm" placeholder="name">
         </div>
@@ -22,7 +26,7 @@
         <br>
         <div class="mb-3 container p-2 mt-2">
                     <button class="btn btn-primary btn-lg" id="btnAdd" onclick="add()">Add</button>
-                    <button class="btn btn-primary btn-lg" id="btnUpdate" onclick="update()">Update</button>
+                    <button class="btn btn-primary btn-lg " id="btnUpdate" onclick="update()">Update</button>
         </div>
     </div>
 
@@ -121,20 +125,28 @@
         function edit(index){
             alert(index);
             let Employees = JSON.parse(localStorage.getItem("Employees"));
-            let employee = Employees[index+1]; 
+            let employee = Employees[index]; 
             console.log(Employees); 
             console.log(employee);
             document.getElementById("txtnm").value = employee.Name;
             document.getElementById("txtem").value = employee.Email;
+            document.getElementById("hdnIndex").value = index;
             document.getElementById("btnAdd").style.display = "none";
             document.getElementById("btnUpdate").style.display = "block";
             
         }
         function update(){
-            alert("Update");
+            
             let name = document.getElementById("txtnm").value;
             let email = document.getElementById("txtem").value;
+            let index = document.getElementById("hdnIndex").value;
             let Employees = JSON.parse(localStorage.getItem("Employees"));
+            Employees[index].Name = name;
+            Employees[index].Email = email;
+            localStorage.setItem("Employees",JSON.stringify(Employees));
+            BindTable();
+            location.reload();
+            alert("Update Successfully !!");
         }
         function del(index){
             alert(index);
