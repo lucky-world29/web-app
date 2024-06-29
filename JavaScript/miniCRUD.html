@@ -122,7 +122,7 @@
             alert(index);
             let Employees = JSON.parse(localStorage.getItem("Employees"));
             let employee = Employees[index+1]; 
-            console.log(Employees);
+            console.log(Employees); 
             console.log(employee);
             document.getElementById("txtnm").value = employee.Name;
             document.getElementById("txtem").value = employee.Email;
