@@ -149,11 +149,16 @@
             alert("Update Successfully !!");
         }
         function del(index){
-            alert(index);
+            //alert(index);
             let response = confirm("Are you sure you want to delete record?");
-            if(response){
-                
+            let newEmployees = [];
+            for (let i = 0; i < response.length; i++) {
+                if (i !== index) {
+                    newEmployees.push(response[i]);
+                }
             }
+            localStorage.setItem("Employees", JSON.stringify(newEmployees));
+            BindTable();
         }
         //========================================================================================================================
     </script>
