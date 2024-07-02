@@ -151,14 +151,24 @@
         function del(index){
             //alert(index);
             let response = confirm("Are you sure you want to delete record?");
-            let newEmployees = [];
-            for (let i = 0; i < response.length; i++) {
-                if (i !== index) {
-                    newEmployees.push(response[i]);
+            
+
+            if(response){
+                let Employees = JSON.parse(localStorage.getItem("Employees"));
+                let newEmployees = [];
+
+                for (let i = 0; i < Employees.length; i++) {
+                    if (i !== index) {
+                        newEmployees.push(Employees[i]);
+                    }
                 }
+
+                localStorage.setItem("Employees", JSON.stringify(newEmployees));
+                BindTable();
+
             }
-            localStorage.setItem("Employees", JSON.stringify(newEmployees));
-            BindTable();
+            
+            
         }
         //========================================================================================================================
     </script>
