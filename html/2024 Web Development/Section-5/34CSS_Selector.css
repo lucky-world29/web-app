@@ -1,0 +1,19 @@
+*{
+    margin: 10px;
+    padding: 2;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: blue;
+}
+.para{
+    color: blueviolet;
+}
