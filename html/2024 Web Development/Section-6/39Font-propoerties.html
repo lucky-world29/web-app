@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100, initial-scale=1.0">
     <title>Font properties</title>
     <style>
-        #pixel1{
+        #pixel1 {
             font-size: 20px;
         }
-        #point{
+
+        #point {
             font-size: 20pt;
         }
-        #em{
+
+        #em {
             font-size: 2em;
         }
-        #rem{
+
+        #rem {
             font-size: 2rem;
         }
-        footer{
+
+        footer {
             font-size: 12pt;
         }
-        html{
+
+        html {
             font-size: xx-large;
         }
+
+    
+        *{
+            font-family: 'Architects Daughter', cursive; 
+        }
+
+        #align{
+            text-align: center;
+        }
     </style>
-</head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+        </style>
+    </head>
+
 <body style="background-color: rgba(0, 0, 0, 0.854);color: rgb(216, 207, 207)">
+    <h1>Font Family</h1>
     <p id="pixel">1 pixel is 1/96 of an inch</p>
     <p id="point">1 point is 1/72 of an inch</p>
     <footer>
@@ -33,5 +53,9 @@
         <p id="rem">1rem is 100% of root</p>
         <h2>Hello </h2>
     </footer>
+    <!-- test alignment -->
+    
+    <p id="align">Hell O  Test-align </p>
 </body>
+
 </html>
