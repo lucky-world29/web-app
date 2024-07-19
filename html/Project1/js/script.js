@@ -106,6 +106,8 @@ function add() {
                 localStorage.clear();
             
         */
+
+                
         let employee = {
             Name: name,
             Email: email,
