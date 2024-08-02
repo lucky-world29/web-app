@@ -5,6 +5,7 @@ const fruits = [
 ]
 
 
+
 //console.log(Object.fromEntries(fruits));
 
 const fruitCounts = fruits.reduce((acc, [fruit, count]) => {
