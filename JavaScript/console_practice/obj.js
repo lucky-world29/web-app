@@ -4,8 +4,6 @@ const fruits = [
     ["bananas",100],
 ]
 
-
-
 //console.log(Object.fromEntries(fruits));
 
 const fruitCounts = fruits.reduce((acc, [fruit, count]) => {
