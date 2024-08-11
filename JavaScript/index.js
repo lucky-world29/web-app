@@ -7,7 +7,6 @@ function show() {
     document.write("hello");
     document.write("hii ii");
 
-    
 }
 
 //show();
