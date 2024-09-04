@@ -34,6 +34,3 @@ console.log(date.toLocaleDateString());
 let newDate = new Date();
 console.log(newDate);
 
-
-
-
