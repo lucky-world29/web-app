@@ -21,16 +21,29 @@ const myArr = [1, 2, 3, 4, 5];
 // console.log(newArr);
 // console.log(typeof newArr);
 
-console.log("A " + myArr);
+// console.log("A " + myArr);
 
 //SLICE
-const myn1 = myArr.slice(0,2);
-console.log(myn1);
-console.log("B "+myArr);
+// const myn1 = myArr.slice(0,2);
+// console.log(myn1);
+// console.log("B "+myArr);
 
 
 //SPLICE
-const myn2 = myArr.splice(0,2);
-console.log(myn2);
-console.log("C "+myArr);
+// const myn2 = myArr.splice(0,2);
+// console.log(myn2);
+// console.log("C "+myArr);
+
+//=================================================================================================
+
+// console.log(myArr.copyWithin(0,1));
+
+//ENTRIES
+const list =  myArr.entries();
+
+for(let i of list){
+    console.log(i);
+}
+
+
 
