@@ -14,7 +14,7 @@ const myArr = [1, 2, 3, 4, 5];
 // myArr.shift();
 
 // console.log(myArr.includes('a'));
-// console.log(myArr.indexOf(90));
+console.log(myArr.indexOf(90));
 
 // const newArr = myArr.join();
 // console.log(newArr);
