@@ -1,13 +1,13 @@
-// // const score = 400;
-// // console.log(score);
-// // console.log(typeof(score));
+// const score = 400;
+// console.log(score);
+// console.log(typeof(score));
 
-// // //
-// // const balance = new Number(899);
-// // console.log(balance);
-// // console.log(typeof(balance));
+// //
+// const balance = new Number(899);
+// console.log(balance);
+// console.log(typeof(balance));
 
-// // const nama = "google";
+// const nama = "google";
 //  console.log("Length  of nama is"+" "+nama.length);
 
 // // //
