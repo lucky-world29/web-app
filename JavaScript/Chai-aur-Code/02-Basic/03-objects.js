@@ -38,3 +38,6 @@ console.log(JsUser.greeting());
 console.log(JsUser.greetingTwo());
 
 // Hello We will start from tomorrow ..
+
+// literal and constructor => 2 way of declare object 
+// constructor == singleton
