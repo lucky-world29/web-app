@@ -41,3 +41,4 @@ console.log(JsUser.greetingTwo());
 
 // literal and constructor => 2 way of declare object 
 // constructor == singleton
+
