@@ -69,9 +69,3 @@ console.log(Object.entries(tinderUser))
 // console.log(typeof(tinderUser))
 
 
-
-
-
-
-
-
