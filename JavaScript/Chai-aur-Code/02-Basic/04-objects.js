@@ -70,5 +70,3 @@ console.log(Object.entries(tinderUser))
 
 
 
-
-
