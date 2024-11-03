@@ -57,3 +57,5 @@ console.log(third_item+" 3rd item");
 
 let [, , ThirdItem=0] = ITEMS();
 console.log(ThirdItem);
+
+
