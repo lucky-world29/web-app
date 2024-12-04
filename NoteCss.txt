@@ -9,8 +9,6 @@ HTML Formatting Elements
 Formatting elements were designed to display special types of text:
 
 
-
-
 <b> - Bold text
 <strong> - Important text
 <i> - Italic text
@@ -21,6 +19,8 @@ Formatting elements were designed to display special types of text:
 <ins> - Inserted text
 <sub> - Subscript text
 <sup> - Superscript text
+
+
 
 
 The HTML <b> element defines bold text, without any extra importance.
