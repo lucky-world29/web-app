@@ -9,6 +9,7 @@ HTML Formatting Elements
 Formatting elements were designed to display special types of text:
 
 
+
 <b> - Bold text
 <strong> - Important text
 <i> - Italic text
