@@ -1,3 +1,4 @@
+
 Use the style attribute for styling HTML elements
 Use background-color for background color
 Use color for text colors
